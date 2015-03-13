@@ -1,0 +1,21 @@
+# User dependent .bashrc file
+
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# Aliases
+
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+
+LS_COMMON="-hG"
+LS_COMMON="$LS_COMMON --color=auto"
+LS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
+
+test -n "$LS_COMMON" &&
+alias ls="command ls $LS_COMMON --color=auto"
+alias ll="ls -l"
+alias la="ls -A"
+# alias dir='ls --color=auto --format=vertical'
+alias emacs='/bin/emacs-w32.exe'
