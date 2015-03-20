@@ -3,7 +3,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (menu-bar-mode -1) ; no menu bar
 (set-face-attribute 'default nil :font "Ubuntu Mono")
-
+(blink-cursor-mode 0)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -51,6 +51,7 @@
 (global-set-key [(super c)] 'copy-region-as-kill) ; copy
 (global-set-key [(super v)] 'yank)                ; paste
 (global-set-key (kbd "M-v") 'yank-pop)            ; paste previous
+(global-set-key (kbd "M-g") 'goto-line)           ; no need for facemenu in normal editing
 
 ;; Navigation, press [f1] to mark a point, and then M-f1 to jump back to it
 (global-set-key [f1] (lambda ()(interactive) (point-to-register 1)))
@@ -60,7 +61,7 @@
 
 ;; Shift+Arrow to move between buffers
 (when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
+   (windmove-default-keybindings))
 
 ;;; ---------------------------------------------------------- Copy to Clipboard
 ;; http://hugoheden.wordpress.com/2009/03/08/copypaste-with-emacs-in-terminal/
@@ -153,9 +154,9 @@ xsel-output )))
 ;;----------------------------------------------------------------ORG MODE
 
 (setq org-todo-keywords
-       '((sequence "TODO" "WAITING" "WORKING" "DONE")))
+       '((sequence "TODO" "WAITING" "WORKING" "STARTED" "DONE")))
 (setq org-todo-keyword-faces
-           '( ("WAITING" . "blue") ("WORKING" . "yellow") ) )
+           '( ("WAITING" . "blue") ("WORKING" . "yellow") ("STARTED" . "pink") ) )
 (setq org-export-with-sub-superscripts nil)
 
 ;;------------------------------------------------------------------------
