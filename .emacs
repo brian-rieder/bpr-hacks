@@ -2,7 +2,8 @@
 (put 'narrow-to-region 'disabled nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (menu-bar-mode -1) ; no menu bar
-(set-face-attribute 'default nil :font "Ubuntu Mono")
+(when (display-graphic-p)
+  (set-face-attribute 'default nil :font "Ubuntu Mono"))
 (blink-cursor-mode 0)
 
 (custom-set-variables
@@ -158,6 +159,13 @@ xsel-output )))
 (setq org-todo-keyword-faces
            '( ("WAITING" . "blue") ("WORKING" . "yellow") ("STARTED" . "pink") ) )
 (setq org-export-with-sub-superscripts nil)
+
+;; Allow for org-mode to use the windmove keybindings
+;; (setq org-replace-disputed-keys t)
+
+;; Spell check within org-mode
+(setq ispell-list-command "--list")
+(add-hook 'org-mode-hook 'turn-on-flyspell)
 
 ;;------------------------------------------------------------------------
 
