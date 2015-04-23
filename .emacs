@@ -186,3 +186,17 @@ xsel-output )))
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-S-c m") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+;;----------------------------------------------------------------------yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;;------------------------------------------------------------------python config
+;; Auto-complete...
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-show-menu-immediately-on-auto-complete t)
+
+(require 'python)
+(define-key python-mode-map (kbd "C-c C-c")
+  (lambda () (interactive) (python-shell-send-buffer t)))
