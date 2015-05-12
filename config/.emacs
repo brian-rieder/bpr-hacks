@@ -155,9 +155,9 @@ xsel-output )))
 ;;----------------------------------------------------------------ORG MODE
 
 (setq org-todo-keywords
-       '((sequence "TODO" "WAITING" "WORKING" "STARTED" "DONE")))
+       '((sequence "TODO" "WAITING" "WORKING" "STARTED" "DEFERRED" "DONE")))
 (setq org-todo-keyword-faces
-           '( ("WAITING" . "blue") ("WORKING" . "yellow") ("STARTED" . "pink") ) )
+           '( ("WAITING" . "blue") ("WORKING" . "yellow") ("STARTED" . "orange") ("DEFERRED" . "purple")) )
 (setq org-export-with-sub-superscripts nil)
 
 ;; Allow for org-mode to use the windmove keybindings
