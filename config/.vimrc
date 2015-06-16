@@ -1,4 +1,4 @@
-" my vimrc file 
+" brian's vimrc file 
 
 " enable filetype plugins
 filetype plugin on
@@ -12,6 +12,7 @@ colorscheme evening
 " fix the stupid tabs
 set expandtab
 set smarttab
+set autoindent
 set ts=2
 set shiftwidth=2
 
@@ -35,3 +36,6 @@ set smartcase
 
 " show the title of the current file in the title bar
 set title
+
+" disable ex mode
+nnoremap Q <nop>
