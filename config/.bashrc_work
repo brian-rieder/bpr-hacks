@@ -3,6 +3,12 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
+# Use vi key bindings
+set -o vi
+
+# Bookmarks
+source ~/BashBookmarks/bookmarks.sh
+
 # Aliases
 
 alias grep='grep --color'                     # show differences in colour
@@ -25,7 +31,5 @@ alias open='cygstart'
 
 alias devdir="cd /cygdrive/c/Apache24"
 alias svndir="cd /cygdrive/c/SVN/plat_arch/trunk/ServerConfig/Apache24" 
-alias bdddir="cd htdocs/yFiles1_2/bdd/"
-alias metdir="cd htdocs/yFiles/met/"
 
 fortune
