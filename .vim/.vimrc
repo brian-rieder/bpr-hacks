@@ -7,7 +7,7 @@ filetype plugin on
 let mapleader=","
 
 " select a colorscheme
-colorscheme evening 
+colorscheme desert 
 
 " fix the stupid tabs
 set expandtab " use the appropriate number of spaces instead of a tab
@@ -41,6 +41,9 @@ set title
 nnoremap Q <nop>
 
 " bind newline w/o insert to enter in normal
-" note: the S-Enter binding does not work in Cygwin tmux
+" note: the S-Enter binding does not work in Cygwin 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" allow exiting insert without escape key
+:imap jk <Esc>
