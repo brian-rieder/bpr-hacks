@@ -6,7 +6,7 @@
 # Use vi key bindings
 set -o vi
 
-# Bookmarks
+# Bookmarks for Bash
 source ~/BashBookmarks/bookmarks.sh
 
 # Aliases
