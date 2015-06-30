@@ -29,7 +29,9 @@ alias clear='printf "\033c"'
 alias vi='vim'
 alias open='cygstart'
 
-alias devdir="cd /cygdrive/c/Apache24"
-alias svndir="cd /cygdrive/c/SVN/plat_arch/trunk/ServerConfig/Apache24" 
+# Functions
+function cs() {
+  cd "$@" && ls
+}
 
 fortune
