@@ -47,3 +47,6 @@ nmap <CR> o<Esc>
 
 " allow exiting insert without escape key
 :imap jk <Esc>
+
+" bind a file reformatting key
+map <F7> mzgg=G'z
