@@ -7,7 +7,7 @@ filetype plugin on
 let mapleader=","
 
 " select a colorscheme
-colorscheme desert 
+colorscheme evening 
 
 " fix the stupid tabs
 set expandtab " use the appropriate number of spaces instead of a tab
@@ -50,3 +50,13 @@ nmap <CR> o<Esc>
 
 " bind a file reformatting key
 map <F7> mzgg=G'z
+
+" allow for diff comparison to save version
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
