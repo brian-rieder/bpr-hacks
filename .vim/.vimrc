@@ -7,7 +7,7 @@ filetype plugin on
 let mapleader=","
 
 " select a colorscheme
-colorscheme evening 
+colorscheme brieder-evening
 
 " fix the stupid tabs
 set expandtab " use the appropriate number of spaces instead of a tab
@@ -20,7 +20,6 @@ set shiftwidth=2 " number of spaces that a <Tab> counts for in specific cases
 syntax on
 
 " line number config
-highlight LineNr ctermfg=grey
 set number
 
 " allow 'hard' backspace in insert mode
