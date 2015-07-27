@@ -1,13 +1,16 @@
 " brian's vimrc file 
 
+" -------------------------------------------------------------- GENERAL CONFIG 
 " enable filetype plugins
 filetype plugin on
 
-" set a better leader key
-let mapleader=","
-
 " select a colorscheme
-colorscheme brieder-evening
+if has("gui_running")
+  colorscheme evening
+else
+  colorscheme brieder-evening
+endif
+
 
 " fix the stupid tabs
 set expandtab " use the appropriate number of spaces instead of a tab
@@ -36,10 +39,14 @@ set smartcase " override 'ignorecase' if search pattern contains uppercase chara
 " show the title of the current file in the title bar
 set title
 
+" ---------------------------------------------------------------- KEY BINDINGS 
+" set a better leader key
+let mapleader=","
+
 " disable ex mode
 nnoremap Q <nop>
 
-" bind newline w/o insert to enter in normal
+" newline w/o insert to enter in normal mode
 " note: the S-Enter binding does not work in Cygwin 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
@@ -47,9 +54,14 @@ nmap <CR> o<Esc>
 " allow exiting insert without escape key
 :imap jk <Esc>
 
-" bind a file reformatting key
+" reformat the entire fil with F7
 map <F7> mzgg=G'z
 
+" search next/search previous centering
+nmap n nzz
+nmap N Nzz
+
+" ------------------------------------------------------------------- FUNCTIONS 
 " allow for diff comparison to save version
 function! s:DiffWithSaved()
   let filetype=&ft
