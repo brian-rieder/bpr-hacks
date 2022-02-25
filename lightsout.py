@@ -51,18 +51,18 @@ def get_user_input():
         print('Invalid coordinate, must be a valid a1-e5 coordinate.')
         return get_user_input()
 
-def make_move(board, move):
+def make_move(board, move, dimension=5):
     file, rank = move
     file = ord(file) - ord('a')
     rank = (dimension-1) - (rank-1)
     board[rank][file] ^= 1
     if rank > 0:
         board[rank-1][file] ^= 1
-    if rank < 4:
+    if rank < (dimension-1):
         board[rank+1][file] ^= 1
     if file > 0:
         board[rank][file-1] ^= 1
-    if file < 4:
+    if file < (dimension-1):
         board[rank][file+1] ^= 1
 
 
