@@ -5,11 +5,7 @@
 filetype plugin on
 
 " select a colorscheme
-if has("gui_running")
-  colorscheme evening
-else
-  colorscheme brieder-evening
-endif
+colorscheme elflord
 
 
 " fix the stupid tabs
@@ -71,3 +67,11 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+" with any JSON onscreen, run JSONFORMAT in command mode and format the JSON
+command! JSONFORMAT %! jq
+
+" powerline
+set  rtp+=/home/brieder/.local/lib/python3.8/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
